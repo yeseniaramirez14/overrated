@@ -1,4 +1,4 @@
-## **Yesenia's Daily Journals** 
+## **Yesenia's Daily Journals**  
 
 ---
 
