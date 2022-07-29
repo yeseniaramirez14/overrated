@@ -90,10 +90,6 @@ async def get_ratings(
     }
 
 
-    return {
-        "ratings": [row_to_reviews_list(row) for row in rows],
-    }
-
 def row_to_reviews_list(row):
     rating = {
         "id": row[0],
