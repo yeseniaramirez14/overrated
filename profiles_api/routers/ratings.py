@@ -88,3 +88,17 @@ async def get_ratings(
     return {
         "ratings": [row_to_ratings_list(row) for row in rows],
     }
+
+
+    return {
+        "ratings": [row_to_reviews_list(row) for row in rows],
+    }
+
+def row_to_reviews_list(row):
+    rating = {
+        "id": row[0],
+        "reviewer_username": row[1],
+        "account_id": row[2],
+        "review_event": row[3],
+    }
+    return rating
