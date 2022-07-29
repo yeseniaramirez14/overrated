@@ -4,11 +4,12 @@
   font-family:"NotablyAbsentRegular-8M2zJ";
 }
 .description{
-  color: #f37435;
+  color: white;
   background-position: center;
   
 }
 #mainover {
+  margin: 100px 0 0 0;
   color: #fff;
   font-size: 92px;
   text-transform: uppercase;
@@ -54,12 +55,11 @@ footer {
 
 .mainlink{
   background: #c99061;
-  color: black;
+  color: white;
   padding: 10px 24px;
   text-decoration: none;
   font-size: 18px;
   border-radius: 20px;
-  color: black;
 }
 .mainlink:hover {
   background-color: rgb(5, 216, 216);
