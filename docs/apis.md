@@ -1,10 +1,10 @@
 # APIs
 
 ## Table of Contents 
-- [Profile/User APIs](#uprofileuser-apisu)
-- [Matches APIs](#umatches-apisu)
-- [Messaging APIs](#umessaging-apisu)
-- [Ratings APIs](#uratings-apisu)
+- [Profile/User APIs](#profileuser-apis)
+- [Matches APIs](#matches-apis)
+- [Messaging APIs](#messaging-apis)
+- [Ratings APIs](#ratings-apis)
 <br>
 <hr>
 
