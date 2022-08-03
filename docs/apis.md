@@ -1,359 +1,388 @@
 # APIs
 
-## Create a new profile
+## <u>Profile/User APIs</u>
+
+### <b>Create a new user/profile</b>
 * **Method**: `POST`
-* **Path**: /api/profile
+* **Path**: /api/profiles/profiles
 
 Input:
 ```json
 {
-    "name": string,
-    "city": string,
-    "age": int,
-    "height": float,
-    "photo_url": string,
-    "about": string,
-    "job": string,
-    "education": string,
-    "gender": string,
-    "sexual_orientation": string,
-    "religion": string,
-    "pronouns": string,
-    "ethnicity": string, 
+    "username": string,
+    "email": string,
+    "password": string,
+    "first_name": string,
+    "last_name": string,
+    "location": string,
+    "date_of_birth": date,
+    "interested": string,
 }
 ```
 Output:
 ```json
 {
     "id": int,
-    "name": string,
-    "city": string,
-    "age": int,
-    "height": float,
-    "photo_url": string,
+    "username": string,
+    "email": string,
+    "password": string,
+    "first_name": string,
+    "last_name": string,
+    "location": string,
+    "date_of_birth": date,
+    "interested": string,
+}
+```
+<br>
+
+### <b>Current user's profile detail view</b>
+* **Method**: `GET`
+* **Path**: /api/profiles/mine
+
+Output:
+```json
+{
+    "id": serial,
+    "username": string,
+    "email": string,
+    "first_name": string,
+    "last_name": string,
+    "date_of_birth": date,
+    "location": string,
+    "photo": string,
     "about": string,
+    "height": int,
     "job": string,
     "education": string,
     "gender": string,
     "sexual_orientation": string,
     "religion": string,
+    "ethnicity": string,
     "pronouns": string,
-    "ethnicity": string, 
+    "interested": string,
+    "average_rating": int
 }
 ```
+<br>
 
-Creating a new profile uses user input to specify their details. It returns all the information along with the new database id.
+### <b>Specific profile's detail view</b>
+* **Method**: `GET`
+* **Path**: /api/profiles/&lt;int:pk&gt;
 
+Output:
+```json
+{
+    "id": serial,
+    "username": string,
+    "email": string,
+    "first_name": string,
+    "last_name": string,
+    "date_of_birth": date,
+    "location": string,
+    "photo": string,
+    "about": string,
+    "height": int,
+    "job": string,
+    "education": string,
+    "gender": string,
+    "sexual_orientation": string,
+    "religion": string,
+    "ethnicity": string,
+    "pronouns": string,
+    "interested": string,
+    "average_rating": int
+}
+```
+<br>
 
-
-
-
-## Update a profile
+### <b>Update the current user's profile</b>
 * **Method**: `PUT`
-* **Path**: /api/profile/<int:pk>/
+* **Path**: /api/profile/myself
 
 Input:
 ```json
 {
-    "name": string,
-    "city": string,
-    "age": int,
-    "height": float,
-    "photo_url": string,
+    "location": string,
+    "photo": string,
     "about": string,
+    "height": int,
     "job": string,
     "education": string,
     "gender": string,
     "sexual_orientation": string,
     "religion": string,
+    "ethnicity": string,
     "pronouns": string,
-    "ethnicity": string, 
+    "interested": string,
 }
 ```
 Output:
 ```json
 {
     "id": int,
-    "name": string,
-    "city": string,
-    "age": int,
-    "height": float,
-    "photo_url": string,
+    "location": string,
+    "photo": string,
     "about": string,
+    "height": int,
     "job": string,
     "education": string,
     "gender": string,
     "sexual_orientation": string,
     "religion": string,
+    "ethnicity": string,
     "pronouns": string,
-    "ethnicity": string, 
+    "interested": string,
 }
 ```
+<br>
 
-Updating a new profile uses user input to specify their details. It returns all the information along with the new database id.
+### <b>Filtered and randomized profile detail view</b>
+* **Method**: `GET`
+* **Path**: /api/random
+
+Output:
+```json
+{
+    "id": serial,
+    "username": string,
+    "email": string,
+    "first_name": string,
+    "last_name": string,
+    "date_of_birth": date,
+    "location": string,
+    "photo": string,
+    "about": string,
+    "height": int,
+    "job": string,
+    "education": string,
+    "gender": string,
+    "sexual_orientation": string,
+    "religion": string,
+    "ethnicity": string,
+    "pronouns": string,
+    "interested": string,
+    "average_rating": int
+}
+```
+<br>
 
 
-
-
-
-## List of profiles
+### <b>List of all profiles</b>
 * **Method**: `GET`
 * **Path**: /api/profiles
 
 Output:
 ```json
 {
-    "id": int,
-    "name": string,
-    "city": string,
-    "age": int,
-    "height": float,
-    "photo_url": string,
+    "id": serial,
+    "username": string,
+    "email": string,
+    "first_name": string,
+    "last_name": string,
+    "date_of_birth": date,
+    "location": string,
+    "photo": string,
     "about": string,
+    "height": int,
     "job": string,
     "education": string,
     "gender": string,
     "sexual_orientation": string,
     "religion": string,
+    "ethnicity": string,
     "pronouns": string,
-    "ethnicity": string, 
 }
 ```
-List of profiles
+<br>
 
-## Create a date/meet up
-* **Method**: `POST`
-* **Path**: /api/date
-
-Input: 
-```json
-{
-    "location_name": string,
-    "profile_one": string,
-    "profile_two": string,
-    "city": string,
-    "state": string,
-    "date": date,
-    "time": time,
-}
-```
-
-Output: 
-```json
-{
-    "id": int,
-    "location_name": string,
-    "profile_one": string,
-    "profile_two": string,
-    "city": string,
-    "state": string,
-    "date": date,
-    "time": time,
-    "picture_url": string,
-    "weather": string
-}
-```
-
-Creating a new meet up uses the incoming city and state data to query an image API to get a URL for an image for the location. This action also uses the incoming date, time and location to get an URL for the weather data for the location. It will save the data to the database and returns all the data with the new database id. 
-
-
-## List of dates/meet up locations
-* **Method**: `GET`
-* **Path**: /api/date
-
-
-Output: 
-```json
-{
-    "id": int,
-    "location_name": string,
-    "profile_one": string,
-    "profile_two": string,
-    "city": string,
-    "state": string,
-    "date": date,
-    "time": time,
-    "picture_url": string,
-    "weather": string
-}
-```
-
-A list of meet ups. 
-
-## Update a date/meet up
-* **Method**: `PUT`
-* **Path**: /api/date/<int:pk>/
-
-Input: 
-```json
-{
-    "location_name": string,
-    "profile_one": string,
-    "profile_two": string,
-    "city": string,
-    "state": string,
-    "date": date,
-    "time": time,
-}
-```
-
-Output: 
-```json
-{
-    "id": int,
-    "location_name": string,
-    "profile_one": string,
-    "profile_two": string,
-    "city": string,
-    "state": string,
-    "date": date,
-    "time": time,
-    "picture_url": string,
-    "weather": string
-}
-```
-
-Updating a meet up uses the incoming city and state data to query an image API to get a URL for an image for the location. This action also uses the incoming date, time and location to get an URL for the weather data for the location. It will save the data to the database and returns all the data with the new database id. 
-
-
-## Delete a date/meet up
+### <b>Delete current user's profile</b>
 * **Method**: `DELETE`
-* **Path**: /api/date/<int:pk>/
+* **Path**: /api/profiles/myself
 
-Deletes a date/meet up.
+Output:
+```json
+{
+    "result": bool
+}
+```
+<br>
 
-## Create a review
-**Method**: 'POST'
-**Path**: /api/review/
+## <u>Matches APIs</u>
+
+### <b>Like a user's profile</b>
+* **Method**: `POST`
+* **Path**: /api/profiles/&lt;int:pk&gt;/liked
 
 Input:
 ```json
 {
-    "person_reviewed": str,
-    "star_rating": int ,
-    "name_of_reviewer": str,
-    "date_reviewed": date,
-    "description": str
+    "current_user['id']": int,
+    "target_user_id": int
 }
 ```
 Output:
 ```json
 {
     "id": int,
-    "person_reviewed": str,
-    "star_rating": int ,
-    "name_of_reviewer": str,
-    "date_reviewed": date,
-    "description": str
+    "active_user_id": int,
+    "target_user_id": int,
+    "liked": bool,
 }
 ```
+<br>
 
-A review can be created once a certain time limit has been met that we feel will have allowed users to get to know each other and then once a review can be created one can leave a review that will be put onto the profile of the user indicating their general feelings and how their interactions went 
-
-
-## List of reviews 
-**Method**: 'GET'
-**Path**: /api/reviews/<int:pk>/
-
-Output:
-```json
-{
-    "id": int,
-    "person_reviewed": str,
-    "star_rating": int ,
-    "name_of_reviewer": str,
-    "date_reviewed": date,
-    "description": str
-}
-```
-
-A list of reviews for a specific profile
-
-## Delete a review
-**Method**: 'DELETE'
-**Path**: /api/review/<int:pk>/
-
-Deletes a review
-
-## Update a review
-**Method**: 'PUT'
-**Path**: /api/review/<int:pk>/
+### <b>Dislike a user's profile</b>
+* **Method**: `POST`
+* **Path**: /api/profiles/&lt;int:pk&gt;/disliked
 
 Input:
 ```json
 {
-    "person_reviewed": str,
-    "star_rating": int ,
-    "name_of_reviewer": str,
-    "date_reviewed": date,
-    "description": str
+    "current_user['id']": int,
+    "target_user_id": int
 }
 ```
 Output:
 ```json
 {
     "id": int,
-    "person_reviewed": str,
-    "star_rating": int ,
-    "name_of_reviewer": str,
-    "date_reviewed": date,
-    "description": str
+    "active_user_id": int,
+    "target_user_id": int,
+    "liked": bool,
 }
 ```
-Updates a review.
+<br>
 
+### <b>List of matches</b>
+* **Method**: `GET`
+* **Path**: /api/my-matches
 
-## Create a user
-**Method**: 'POST'
-**Path**: /api/user/
+Output:
+```json
+{
+    "id": int,
+    "photo": string,
+    "first_name": string,
+    "last_name": string,
+    "location": string,
+    "date_of_birth": date,
+    "average_rating": float,
+    "match_id": int,
+}
+```
+<br>
+
+## <u>Messaging APIs</u>
+<br>
+
+### <b>List of the 3 most recent conversations of the current user </b>
+* **Method**: 'GET' <br>
+* **Path**: /api/messages
+
+Output:
+```json
+{
+    "id": int,
+    "photo": string,
+    "first_name": string,
+    "last_name": string,
+    "match_id": int,
+    "sender": int,
+    "recipient": int,
+    "sent": datetime,
+    "message": string
+}
+```
+<br>
+
+### <b>Send a message to another user </b>
+* **Method**: 'POST'
+* **Path**: /api/messages
 
 Input:
 ```json
 {
-    "email": str,
-    "username": str,
-    "date_of_birth": int ,
-    "password": str,
+    "recipient": int,
+    "sent": datetime,
+    "message": string
 }
 ```
 Output:
 ```json
 {
-    "email": str,
-    "username": str,
-    "date_of_birth": int ,
-    "password": str,
+    "id": int,
+    "match_id": int,
+    "sender": int,
+    "recipient": int,
+    "sent": datetime,
+    "message": string
 }
 ```
+<br>
 
-Creating a new user uses the input to specify their details. It returns all the information along with the new database id.
+### <b>List of all messages between the current user & target user </b>
+* **Method**: 'POST'
+* **Path**: /api/messages/&lt;int:pk&gt;
 
-## Update a user
-**Method**: 'PUT'
-**Path**: /api/user/<int:pk>
+Output:
+```json
+{
+    "id": int,
+    "sender": int,
+    "recipient": int,
+    "sent": datetime,
+    "message": string
+}
+```
+<br>
+
+## <u>Ratings APIs</u>
+
+### <b>Rate a user </b>
+* **Method**: 'POST'
+* **Path**: /api/profiles/&lt;int:pk&gt;/rating 
 
 Input:
 ```json
 {
-    "email": str,
-    "username": str,
-    "date_of_birth": int ,
-    "password": str,
+    "rating": int,
+    "rating_of": int,
 }
 ```
 Output:
 ```json
 {
-    "email": str,
-    "username": str,
-    "date_of_birth": int ,
-    "password": str,
+    "id": int,
+    "rating": int,
+    "rating_of": int,
+    "rating_by": int,
 }
 ```
+<br>
 
-Updates an existing user.
+### <b>Get the rating average of a user</b>
+* **Method**: 'POST'
+* **Path**: /api/profiles/&lt;int:pk&gt;/average-rating 
 
-## Delete a user
-**Method**: 'DELETE'
 
-Deletes an existing user.
+Output:
+```json
+{
+    "average_rating": float
+}
+```
+<br>
+
+### <b>List of the current user's ratings </b>
+* **Method**: 'GET'
+* **Path**: /api/my-ratings
+
+Output:
+```json
+{
+    "id": serial,
+    "reviewer_username": int,
+    "account_id": int ,
+    "review_event": int,
+}
+```

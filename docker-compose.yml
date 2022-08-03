@@ -43,18 +43,6 @@ services: # Container that we want to run
       # Password for the postgres superuser
       #   for the user of the application database
       POSTGRES_PASSWORD: secret
-  # db: # not sure about db directories
-  #   build:
-  #     context: data
-  #     dockerfile: Dockerfile.dev
-  #   volumes:
-  #     - overrated:/var/lib/postgresql/data
-  #   environment:
-  #     POSTGRES_PASSWORD: overrated
-  #     POSTGRES_USER: overrated
-  #     POSTGRES_DB: overrated
-  #   ports:
-  #     - "15432:5432"
   pg-admin:
     image: dpage/pgadmin4 #I only have to docker-compose up
     volumes:
