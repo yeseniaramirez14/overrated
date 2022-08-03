@@ -5,7 +5,7 @@ This application will need to get the following kinds of data from third-party s
 
 <br>
 
-<i>Stretch Goals</i>
+<i>Stretch Goals:
 - Location stock images
 - Weather data by zip code
-- GIF data for the chat window
+- GIF data for the chat window </i>

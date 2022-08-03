@@ -1,5 +1,13 @@
 # APIs
 
+## Table of Contents 
+- [Profile/User APIs](#uprofileuser-apisu)
+- [Matches APIs](#umatches-apisu)
+- [Messaging APIs](#umessaging-apisu)
+- [Ratings APIs](#uratings-apisu)
+<br>
+<hr>
+
 ## <u>Profile/User APIs</u>
 
 ### <b>Create a new user/profile</b>
@@ -206,6 +214,7 @@ Output:
 }
 ```
 <br>
+<hr>
 
 ## <u>Matches APIs</u>
 
@@ -271,6 +280,7 @@ Output:
 }
 ```
 <br>
+<hr>
 
 ## <u>Messaging APIs</u>
 <br>
@@ -335,6 +345,7 @@ Output:
 }
 ```
 <br>
+<hr>
 
 ## <u>Ratings APIs</u>
 

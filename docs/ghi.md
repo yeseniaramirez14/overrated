@@ -1,3 +1,5 @@
+<div align="center">
+
 # Graphical Human Interface
 
 ## Sign-Up Page
@@ -28,5 +30,4 @@ This is the page that will show a list view of all of your current matches and w
 This is the page that will show a list view of all the locations near the city entered. This will also show the weather and a photo if available. 
 ![Meet Up Page](wireframes/meet-up-page.png)
 
-
-
+</div>

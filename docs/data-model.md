@@ -49,7 +49,7 @@ Two users are matched if they liked each other
 |-|-|-|-|
 | user1 | int | no | no |
 | user2 | int | no | no |
-| created_on | datetime | no || no |
+| created_on | datetime | no | no |
 
 <br>
 
